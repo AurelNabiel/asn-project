@@ -1,23 +1,32 @@
 import React from "react";
-import LogoKemendagri from "../assets/LogoKemendagri.png"
-
+import LogoKemendagri from "../assets/LogoKemendagri.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-
-
   return (
     <>
-    <div class="absolute inset-x-0 top-0 mt-10 w-3/4 rounded-full container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center bg-[#063A69]">   
-    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-white font-semibold ">
-      <a href="1" class="mr-10 hover:text-[#D49F1B]">Beranda</a>
-      <a href="2" class="mr-10 hover:text-[#D49F1B]">Pengumuman</a>
-      <a href="3" class="mr-10 hover:text-[#D49F1B]">Konsultasi</a>
-      <a href="4" class="mr-10 hover:text-[#D49F1B]">Pengacara</a>
-      <a href="5" class="mr-10 hover:text-[#D49F1B]">Pengadaan</a>
-      <a href="6" class=" hover:text-[#D49F1B]">Kotak pesan</a>
-
-    </nav>
-  </div>
+      <div class="absolute inset-x-0 top-0 mt-10 w-3/4 rounded-full container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center bg-[#063A69]">
+        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-white font-semibold ">
+          <Link to={"/"}>
+            <p class="mr-10 hover:text-[#D49F1B]">Beranda</p>
+          </Link>
+          <Link to={"/pengumuman"}>
+            <p class="mr-10 hover:text-[#D49F1B]">Pengumuman</p>
+          </Link>
+          <Link to={"/konsultasi"}>
+            <p class="mr-10 hover:text-[#D49F1B]">Konsultasi</p>
+          </Link>
+          <Link to={"/pengacara"}>
+            <p class="mr-10 hover:text-[#D49F1B]">Pengacara</p>
+          </Link>
+          <Link to={"/pengadaan"}>
+            <p class="mr-10 hover:text-[#D49F1B]">Pengadaan</p>
+          </Link>
+          <Link to={"/pesan"}>
+            <p class=" hover:text-[#D49F1B]">Kotak pesan</p>
+          </Link>
+        </nav>
+      </div>
     </>
   );
 }
