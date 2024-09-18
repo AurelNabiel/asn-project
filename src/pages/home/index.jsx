@@ -155,9 +155,9 @@ export default function Home() {
         </div>
       </div>
       {/* Content */}
-      <div className="min-h-screen flex items-center justify-center p-12  ">
-        <div className="w-full bg-blue-700 p-12 rounded-xl shadow-lg">
-          <div class="grid grid-cols-2 gap-4">
+      <div className="min-h-screen flex items-center justify-center lg:p-12 p-6 ">
+        <div className="w-full bg-blue-700 lg:p-12 p-6 rounded-xl shadow-lg">
+          <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
             <Card />
             <Card />
             <Card />
