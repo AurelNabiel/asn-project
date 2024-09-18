@@ -7,7 +7,7 @@ export default function AdvoCard({i}) {
     <>
     <div className="p-5 advocard rounded-lg flex flex-col items-start">
       {/* top */}
-      <div className="relative flex items-center justify-between w-full mb-4">
+      <div className="relative flex items-center justify-between gap-x-3 w-full mb-4">
         {/* left image */}
         <img
           className="w-20 h-20 align-top inline-block rounded-[6px] "

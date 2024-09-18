@@ -176,8 +176,17 @@ export default function Home() {
       {/* advokat */}
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto  ">
-         {/* content */}
-         <div className="relative">
+          <div className="title flex flex-col gap-y-3 mb-5">
+            <h2 className="text-center font-bold text-2xl text-black ">
+              60+ Mitra Pengacara Pilihan
+            </h2>
+            <p className="text-center font-medium">
+              Mitra kami telah tergabung dan diawasi oleh organisasi advokat
+              (PERADI, KAI, dsb.)
+            </p>
+          </div>
+          {/* content */}
+          <div className="relative mb-5">
             {/* Custom Navigation */}
             <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
               <button className="swiper-button-prev bg-gray-900 text-white p-2 rounded-full">
@@ -195,8 +204,22 @@ export default function Home() {
             <Swiper
               slidesPerView={3}
               spaceBetween={30}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1, 
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2, 
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 3, 
+                  spaceBetween: 30,
+                },
+              }}
               style={{
-                padding: "20px 0", // 20px di atas dan bawah, 0px di kiri dan kanan
+                padding: "20px 0",
               }}
               navigation={{
                 nextEl: ".swiper-button-next",
@@ -212,11 +235,24 @@ export default function Home() {
               ))}
             </Swiper>
           </div>
-         {/* content */}
+          {/* content */}
+          <div className="flex justify-center mt-5">
+            <button
+              className={` px-6 py-3 text-white rounded-lg transition duration-200 ease-in-out  `}
+              style={{ backgroundColor: "#2C91FF" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "#2677CC")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "#2C91FF")
+              }
+            >
+              Lihat Semua Mitra Pengacara
+            </button>
+          </div>
         </div>
       </section>
       {/* advokat */}
-
     </>
   );
 }
