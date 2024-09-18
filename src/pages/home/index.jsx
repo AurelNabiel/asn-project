@@ -1,10 +1,53 @@
-import React from 'react'
-import Card from '../../components/card'
-import Navbar from '../../components/navbar'
+import React from "react";
+import Card from "../../components/card";
+import Navbar from "../../components/navbar";
 import kemendagri from "../../assets/kemendagri.png";
 import logokemendagri from "../../assets/LogoKemendagri.png";
 import BackgroundKemendagri from "../../assets/Group 65.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import AdvoCard from "./components/AdvoCard";
 export default function Home() {
+  const advokat = [
+    {
+      id: 1,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 2,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 3,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 4,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+  ];
   return (
     <>
       <Navbar />
@@ -130,40 +173,50 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Content */}
+      {/* advokat */}
       <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto  ">
-    <div class="flex flex-wrap -m-4 justify-center">
-      <div class="p-4 lg:w-1/4 md:w-1/2 ">
-        <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/200x200"/>
-          <div class="w-full">
-            <h2 class="title-font font-medium text-lg text-gray-900">Anonymous</h2>
-            <h3 class="text-gray-500 mb-3">Pengacara 1</h3>
+        <div class="container px-5 py-24 mx-auto  ">
+         {/* content */}
+         <div className="relative">
+            {/* Custom Navigation */}
+            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
+              <button className="swiper-button-prev bg-gray-900 text-white p-2 rounded-full">
+                <FaArrowLeft />
+              </button>
+            </div>
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
+              <button className="swiper-button-next bg-gray-900 text-white p-2 rounded-full">
+                <FaArrowRight />
+              </button>
+            </div>
+            {/* Custom Navigation */}
+
+            {/* Swiper */}
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              style={{
+                padding: "20px 0", // 20px di atas dan bawah, 0px di kiri dan kanan
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              {advokat.map((i, key) => (
+                <SwiperSlide key={key}>
+                  <AdvoCard i={i} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
+         {/* content */}
         </div>
-      </div>
-      <div class="p-4 lg:w-1/4 md:w-1/2 ">
-        <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/200x200"/>
-          <div class="w-full">
-            <h2 class="title-font font-medium text-lg text-gray-900">Anonymous</h2>
-            <h3 class="text-gray-500 mb-3">Pengacara 4</h3>
-          </div>
-        </div>
-      </div><div class="p-4 lg:w-1/4 md:w-1/2 ">
-        <div class="h-full flex flex-col items-center text-center">
-          <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/200x200"/>
-          <div class="w-full">
-            <h2 class="title-font font-medium text-lg text-gray-900">Anonymous</h2>
-            <h3 class="text-gray-500 mb-3">Pengacara 3</h3>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
+      </section>
+      {/* advokat */}
+
     </>
-  )
+  );
 }
