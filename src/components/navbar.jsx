@@ -79,7 +79,7 @@ function DropdownLD({ setOpen, pathname, isActive }) {
                     : "hover:text-[#D49F1B]"
                 }`}
               >
-                Login
+                Akun
               </Menu.Button>
             </div>
             <Transition
@@ -94,24 +94,28 @@ function DropdownLD({ setOpen, pathname, isActive }) {
               <Menu.Items className="absolute mt-2 w-20 origin-top-right divide-y divide-gray-100 rounded-sm bg-blue-900  bg-opacity-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="px-1 py-1 ">
                   <Menu.Item>
-                    <button
-                      className={`group flex justify-center w-full items-center rounded-md px-2 py-1 text-sm text-white  ${isActive(
-                        "/login"
-                      )} `}
-                    >
-                      ASN
-                    </button>
+                    <Link to={"/auth/asn"}>
+                      <button
+                        className={`group flex justify-center w-full items-center rounded-md px-2 py-1 text-sm text-white  ${isActive(
+                          "/auth/asn"
+                        )} `}
+                      >
+                        ASN
+                      </button>
+                    </Link>
                   </Menu.Item>
                 </div>
                 <div className="px-1 py-1 ">
                   <Menu.Item>
-                    <button
-                      className={`group flex justify-center w-full items-center rounded-md px-2 py-1 text-sm text-white  ${isActive(
-                        "/login"
-                      )} `}
-                    >
-                      Pengacara
-                    </button>
+                  <Link to={"/auth/pengacara"}>
+                      <button
+                        className={`group flex justify-center w-full items-center rounded-md px-2 py-1 text-sm text-white  ${isActive(
+                          "/auth/pengacara"
+                        )} `}
+                      >
+                        Pengacara
+                      </button>
+                    </Link>
                   </Menu.Item>
                 </div>
               </Menu.Items>
