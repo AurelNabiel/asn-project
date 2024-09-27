@@ -10,6 +10,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import AdvoCard from "./components/AdvoCard";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/16/solid";
 export default function Home() {
   const advokat = [
     {
@@ -206,15 +208,15 @@ export default function Home() {
               spaceBetween={30}
               breakpoints={{
                 320: {
-                  slidesPerView: 1, 
+                  slidesPerView: 1,
                   spaceBetween: 10,
                 },
                 768: {
-                  slidesPerView: 2, 
+                  slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 3, 
+                  slidesPerView: 3,
                   spaceBetween: 30,
                 },
               }}
@@ -253,6 +255,74 @@ export default function Home() {
         </div>
       </section>
       {/* advokat */}
+      {/* FAQ */}
+      <section className=" mt-32 mb-20 flex justify-center bg-[#EDEDED] bg-opacity-[80%]">
+        <div className="container lg:px-0 px-5 py-10 flex flex-col justify-center relative  xl:bottom-44  lg:bottom-44 md:bottom-36 sm:bottom-28 bottom-28">
+          <div
+            className="w-full  bg-cover bg-center rounded-xl lg:p-24 p-14 mb-10"
+            style={{ backgroundImage: `url(${kemendagri})` }}
+          >
+            <h2 className="lg:text-5xl text-4xl font-bold text-white lg:w-1/2">
+              Pertanyaan yang sering di ajukan (F.A.Q)
+            </h2>
+          </div>
+          <div className="flex flex-col w-full space-y-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i, key) => (
+              <Question key={key} text={`Pertanyaan ${i}`} />
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* FAQ */}
     </>
   );
 }
+
+function Question({ text }) {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <>
+      <div className="mx-auto w-full rounded-md bg-[#EDEDED] py-3 border-2 border-white">
+        <Disclosure>
+          {({ open }) => (
+            <>
+              <Disclosure.Button
+                className="flex w-full justify-between px-4 py-2 text-left text-sm font-medium transition-all duration-300 ease-in-out"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <span className="w-11/12 font-semibold text-base">{text}</span>
+                <ChevronUpIcon
+                  className={`${
+                    open ? "rotate-180" : ""
+                  } h-5 w-5 text-blue-900 transition-transform duration-300 ease-in-out`}
+                />
+              </Disclosure.Button>
+              {open ? <div className="border-b border-white"></div> : null}
+              <div
+                style={{
+                  height: isOpen ? "auto" : "0px",
+                  overflow: "hidden",
+                  transition: "height 0.5s ease",
+                }}
+              >
+                <Disclosure.Panel
+                  className={`px-4 pt-4 pb-2 lg:text-sm text-xs text-gray-500 transition-opacity duration-500 ease-in-out ${
+                    isOpen ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  illo velit maxime repellendus, ipsam reiciendis eius
+                  praesentium eligendi dolorem delectus quas consequatur fugit
+                  necessitatibus eum dicta laborum. In, perferendis veritatis.
+                </Disclosure.Panel>
+              </div>
+            </>
+          )}
+        </Disclosure>
+      </div>
+    </>
+  );
+}
+
+
