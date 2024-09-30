@@ -6,59 +6,35 @@ import { FaBurger } from "react-icons/fa6";
 import { CiMenuBurger } from "react-icons/ci";
 import { Menu, Transition, Dialog } from "@headlessui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
+import Avatar from "../pages/home/components/Avatar";
+import MenuLink from "./MenuLink";
 
-export default function Navbar() {
+export default function Navbar({open, setOpen}) {
   const location = useLocation();
 
   const isActive = (path) =>
     location.pathname === path ? "text-[#D49F1B]" : "hover:text-[#D49F1B]";
   const [navbarOpen, setNavbarOpen] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
+  
 
   return (
     <>
-      <div className="absolute inset-x-0 top-0 mt-10 w-3/4 rounded-full container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center bg-[#063A69]">
-        <nav className="md:ml-auto md:mr-auto lg:flex hidden flex-wrap items-center text-base justify-center text-white font-semibold">
-          <Link to={"/"}>
-            <p className={`mr-10 ${isActive("/")}`}>Beranda</p>
-          </Link>
-          <Link to={"/pengumuman"}>
-            <p className={`mr-10 ${isActive("/pengumuman")}`}>Pengumuman</p>
-          </Link>
-          <Link to={"/konsultasi"}>
-            <p className={`mr-10 ${isActive("/konsultasi")}`}>Konsultasi</p>
-          </Link>
-
-          <Link to={"/pengadaan"}>
-            <p className={`mr-10 ${isActive("/pengadaan")}`}>Pengadaan</p>
-          </Link>
-          <Link to={"/pesan"}>
-            <p className={`${isActive("/pesan")}`}>Kotak pesan</p>
-          </Link>
-          <DropdownLD setOpen={setOpen} isActive={isActive} />
-        </nav>
-        {/* mobile */}
-        <div className="flex lg:hidden items-center justify-center gap-x-5">
-          <button
-            onClick={() => setNavbarOpen(!navbarOpen)}
-            className="xl:hidden lg:hidden h-8 w-8"
-          >
-            {/* {navbarOpen ? (
-                <CloseCircle
-                  className="h-8 w-8 xl:hidden lg:hidden transition-all"
-                  color="#ffffff"
-                />
-              ) : (
-                <HambergerMenu
-                  className="h-8 w-8 xl:hidden lg:hidden transition-all"
-                  color="#ffffff"
-                />
-              )} */}
-            <CiMenuBurger isClosed={navbarOpen} />
-          </button>
+      <nav
+        className={`sm:none duration-175 linear fixed !z-50 flex min-h-full flex-col bg-[#134470] pb-10 shadow-2xl shadow-white/5 transition-all dark:!bg-navy-800   ${
+          open ? "" : ""
+        }`}
+      >
+        <div className="mx-[30px] mt-14 flex items-center space-x-3 ">
+          <div className="font-poppins text-md font-bold uppercase text-navy-700 ">
+            <Avatar />
+          </div>
         </div>
-        {/* mobile */}
-      </div>
+        <div className="mt-[38px] mb-7 h-px ">
+          <ul className="mb pt-1">
+            <MenuLink/>
+          </ul>
+        </div>
+      </nav>
     </>
   );
 }

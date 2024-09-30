@@ -14,14 +14,11 @@ import Konsultasi from "./pages/konsultasi";
 function App() {
   return (
     <>
-      <Navbar />
+
       <Routes>
+        
         <Route path="/" element={<Home />} />
-        <Route path="/pengumuman" element={<Pengumuman />} />
-        <Route path="/konsultasi" element={<Konsultasi />} />
-        <Route path="/pengacara" element={<Pengacara />} />
-        <Route path="/pengadaan" element={<Pengadaan />} />
-        <Route path="/pesan" element={<Pesan />} />
+       
       </Routes>
       <Footer />
     </>
