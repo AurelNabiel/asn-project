@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.advocard {
+    box-shadow: rgb(207, 207, 207) 2px 4px 6px;
+}
