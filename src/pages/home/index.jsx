@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar";
 import kemendagri from "../../assets/kemendagri.png";
 import logokemendagri from "../../assets/LogoKemendagri.png";
 import BackgroundKemendagri from "../../assets/Group 65.png";
+import bgWorker from "../../assets/images/worker_on_desk.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 // Import Swiper styles
@@ -15,6 +16,7 @@ import { ChevronUpIcon } from "@heroicons/react/16/solid";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeState } from "../../redux/actions";
+import Title from "./components/Title";
 
 export default function Home() {
   const activeHash = useSelector((state) => state.data);
@@ -114,47 +116,72 @@ export default function Home() {
   return (
     <>
       <section id="">
-        <div className="overflow-x-hidden h-screen">
+        <div className="overflow-hidden h-screen mt-10">
           <div
-            className="xl:pt-48 lg:pt-48 md:pt-32 pt-32 w-screen h-[80vh] bg-cover bg-center text-white xl:px-20 lg:px-20 md:px-16 sm:px-14 px-12 capitalize rounded-b-2xl"
+            className=" py-20 bg-cover bg-center text-white xl:px-20 lg:px-20 md:px-16 sm:px-14 px-12 capitalize rounded-2xl"
             style={{ backgroundImage: `url(${kemendagri})` }}
           >
-            <div class="container mx-auto flex px-5  md:flex-row flex-col items-center ">
-              <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 class="title-font sm:text-5xl text-3xl  font-medium text-white">
-                  MEMBANTU APARATUR <br /> SIPIL NEGARA DENGAN <br /> SEPENUH
-                  HATI
-                </h1>
-                <hr class="w-3/4 h-1  my-2 bg-gray-100 border-0 rounded md:my-5 dark:bg-[#D19D1C]"></hr>
-              </div>
+            <div class=" mx-auto flex px-20 py-16  md:flex-row flex-col items-center justify-end ">
               <img class=" object-center" alt="hero" src={logokemendagri} />
             </div>
           </div>
-        </div>
-        {/* pengumuman */}
-        <div className="min-h-screen flex items-center justify-center lg:p-12 p-6 ">
-          <div className="w-full bg-blue-700 lg:p-12 p-6 rounded-xl shadow-lg">
-            <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+          <div class=" flex flex-col md:items-start mt-10 md:text-left mb-16 md:mb-0 items-center text-center">
+            <div className="flex flex-col items-start">
+              <h1 class="title-font lg:w-3/4 sm:text-5xl text-3xl  font-medium text-[#D19D1C]">
+                MEMBANTU APARATUR SIPIL NEGARA DENGAN SEPENUH HATI
+              </h1>
+              <hr class="w-3/4 h-1  my-2 bg-gray-100 border-0 rounded md:my-5 dark:bg-[#D19D1C]"></hr>
             </div>
-
-            <div class="flex justify-center mt-6">
-              <button class="bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200">
-                Lihat Lebih Lanjut
+            <div className="flex gap-x-10 justify-start items-center lg:w-1/4 md:w-1/3 w-full">
+              <button
+                type="submit"
+                className="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#1C406D] hover:bg-[#2A5080] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Konsultasi via <span className="ml-2 text-[#D49F1B]">Chat</span>
+              </button>
+              <button
+                type="submit"
+                className="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#1C406D] hover:bg-[#2A5080] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Tentang <span className="ml-2 text-[#D49F1B]">Kami</span>
               </button>
             </div>
           </div>
         </div>
-        {/* pengumuman */}
+        {/* faq */}
+        <div className="px-5 py-10 flex flex-col justify-center relative  ">
+          <div
+            className="w-full  bg-cover bg-center rounded-xl lg:p-24 p-14 mb-10"
+            style={{ backgroundImage: `url(${kemendagri})` }}
+          >
+            <h2 className="lg:text-5xl text-4xl font-bold text-white lg:w-1/2">
+              Pertanyaan yang sering di ajukan (F.A.Q)
+            </h2>
+          </div>
+          <div className="flex flex-col w-full space-y-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i, key) => (
+              <Question key={key} text={`Pertanyaan ${i}`} />
+            ))}
+          </div>
+        </div>
+        {/* faq */}
       </section>
+      {/* pengumuman */}
+      <section
+        id="pengumuman"
+        className="h-screen mt-32 mb-20 py-10 flex flex-col  bg-cover bg-no-repeat bg-center"
+       
+      >
+       <Title text="Pengumuman" />
+       
+      </section>
+      {/* pengumuman */}
+      {/* konsultasi */}
+      <section id="konsultasi" className="h-screen w-full"></section>
+      {/* konsultasi */}
 
-      {/* advokat */}
-      <section id="pengumuman" class="text-gray-600 body-font">
+      {/* pengacara */}
+      <section id="pengacara" class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto  h-screen">
           <div className="title flex flex-col gap-y-3 mb-5">
             <h2 className="text-center font-bold text-2xl text-black ">
@@ -232,29 +259,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* advokat */}
-      {/* FAQ */}
-      <section
-        id="faq"
-        className="h-screen mt-32 mb-20 flex justify-center bg-[#EDEDED] bg-opacity-[80%]"
-      >
-        <div className="container lg:px-0 px-5 py-10 flex flex-col justify-center relative  xl:bottom-44  lg:bottom-44 md:bottom-36 sm:bottom-28 bottom-28">
-          <div
-            className="w-full  bg-cover bg-center rounded-xl lg:p-24 p-14 mb-10"
-            style={{ backgroundImage: `url(${kemendagri})` }}
-          >
-            <h2 className="lg:text-5xl text-4xl font-bold text-white lg:w-1/2">
-              Pertanyaan yang sering di ajukan (F.A.Q)
-            </h2>
-          </div>
-          <div className="flex flex-col w-full space-y-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i, key) => (
-              <Question key={key} text={`Pertanyaan ${i}`} />
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* FAQ */}
+      {/* pengacara */}
+
+      {/* pengadaan */}
+      <section id="pengadaan" className="h-screen w-full"></section>
+      {/* pengadaan */}
+
+      {/* pesan */}
+      <section id="pesan" className="h-screen w-full"></section>
+      {/* pesan */}
     </>
   );
 }
