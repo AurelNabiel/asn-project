@@ -83,6 +83,8 @@ const MenuList = ({ iconSelected, icon, name, hash, open }) => {
     <li className="relative mb-3 flex hover:cursor-pointer px-8">
       <a
         href={hash}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         className={`my-[3px]  duration-150 transform  flex cursor-pointer items-center  pl-1 py-2 rounded-lg hover:bg-[#D19D1C] hover:text-white dark:hover:bg-[#D19D1C] dark:hover:text-white ${
           isActive &&
           "bg-[#D19D1C] text-white dark:bg-[#D19D1C] dark:text-white"
@@ -92,8 +94,7 @@ const MenuList = ({ iconSelected, icon, name, hash, open }) => {
           className={`font-bold !z-50 ${
             isActive || isHovered ? "text-blue-500" : "text-brand-500"
           } dark:text-white`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+         
         >
           {/* Menampilkan ikon berdasarkan kondisi */}
           {isActive || isHovered ? iconSelected : icon}

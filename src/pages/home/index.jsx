@@ -173,7 +173,7 @@ export default function Home() {
        
       >
        <Title text="Pengumuman" />
-       
+          
       </section>
       {/* pengumuman */}
       {/* konsultasi */}

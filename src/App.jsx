@@ -26,7 +26,7 @@ function App() {
         <Route path="/auth/asn" element={<Asn />} />
         <Route path="/auth/pengacara" element={<Pengacara />} />
       </Routes>
-      {!hideNavbarAndFooter && <Footer />}
+      {/* {!hideNavbarAndFooter && <Footer />} */}
     </>
   );
 }
