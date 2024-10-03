@@ -3,8 +3,7 @@ import Card from "../../components/card";
 import Navbar from "../../components/navbar";
 import kemendagri from "../../assets/kemendagri.png";
 import logokemendagri from "../../assets/LogoKemendagri.png";
-import BackgroundKemendagri from "../../assets/Group 65.png";
-import bgWorker from "../../assets/images/worker_on_desk.png";
+import pengumuman from "../../assets/images/bg_pengumuman.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 // Import Swiper styles
@@ -169,11 +168,56 @@ export default function Home() {
       {/* pengumuman */}
       <section
         id="pengumuman"
-        className="h-screen mt-32 mb-20 py-10 flex flex-col  bg-cover bg-no-repeat bg-center"
-       
+        className="h-full py-10 flex flex-col  bg-cover bg-no-repeat bg-center"
+        style={{ backgroundImage: `url(${pengumuman})` }}
       >
-       <Title text="Pengumuman" />
-          
+        <div className="flex flex-col gap-y-10 h-screen">
+          <Title text="Pengumuman" />
+          <div className="flex items-center justify-center lg:p-12 p-6 h-full">
+            <div className="w-full">
+              <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+              </div>
+
+              <div class="flex justify-center mt-6">
+                <button class="bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200">
+                  Lihat Lebih Lanjut
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className=" flex flex-col gap-y-10 h-screen justify-center">
+          <Title text="Proses Pengaduan Hukum" />
+          <div className="flex-1  p-8">
+            <div className="bg-white rounded-lg shadow-lg px-8 py-52 flex justify-center items-center">
+              <div className="flex items-center ">
+                <div className="flex items-center">
+                  <div className="w-28 h-28 bg-blue-600 rounded-full"></div>
+                  <div className="w-16 h-1 bg-yellow-500"></div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-28 h-28 bg-blue-600 rounded-full"></div>
+                  <div className="w-16 h-1 bg-yellow-500"></div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-28 h-28 bg-blue-600 rounded-full"></div>
+                  <div className="w-16 h-1 bg-yellow-500"></div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center">
+                    <i className="fas fa-check text-white"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       {/* pengumuman */}
       {/* konsultasi */}
