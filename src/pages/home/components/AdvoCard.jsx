@@ -1,11 +1,16 @@
 import React from 'react'
 import { FaGraduationCap, FaStar } from 'react-icons/fa6';
 import { MdOutlineWork } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdvoCard({i}) {
+  const navigate = useNavigate();
+
   return (
     <>
-    <div className="p-5 advocard bg-white rounded-lg flex flex-col items-start">
+    <div className="p-5 advocard bg-white rounded-lg flex flex-col items-start cursor-pointer" onClick={() => {
+      navigate(`/pengacara/${i.id}`);
+    }}>
       {/* top */}
       <div className="relative flex items-center justify-between gap-x-3 w-full mb-4">
         {/* left image */}
