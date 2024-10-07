@@ -11,8 +11,8 @@ export default function Layout({ children }) {
         className="h-full w-full bg-lightPrimary dark:!bg-navy-900 bg-cover"
         // style={{ backgroundImage: `url(${bg_layout})` }}
       >
-        <main className={` h-full flex-none transition-all ml-[153px]`}>
-          <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] pl-2 md:pr-2">
+        <main className={` h-full flex-none transition-all `}>
+          <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] pl-2 ">
             {children}
           </div>
         </main>

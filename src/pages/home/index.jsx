@@ -99,7 +99,7 @@ export default function Home() {
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
       university: "Universitas Surabaya",
-    }
+    },
   ];
 
   const dataPengumuman = [
@@ -202,13 +202,16 @@ export default function Home() {
   }, [location]);
 
   const options1 = [{ name: "Pengalaman Kerja", value: "" }];
-  const options2 = [{ name: "Daerah", value: "" }, { name: "Cibitung", value: "cibitung" }];
+  const options2 = [
+    { name: "Daerah", value: "" },
+    { name: "Cibitung", value: "cibitung" },
+  ];
   const [selectedOption1, setSelectedOption1] = React.useState(options1[0]);
   const [selectedOption2, setSelectedOption2] = React.useState(options2[0]);
   return (
     <>
       <section id="">
-        <div className="overflow-hidden h-screen mt-10">
+        <div className="overflow-hidden h-screen mt-10 ml-[153px]">
           <div
             className=" py-20 bg-cover bg-center text-white xl:px-20 lg:px-20 md:px-16 sm:px-14 px-12 capitalize rounded-2xl"
             style={{ backgroundImage: `url(${kemendagri})` }}
@@ -241,7 +244,7 @@ export default function Home() {
           </div>
         </div>
         {/* faq */}
-        <div className="px-5 py-10 flex flex-col justify-center relative  ">
+        <div className="px-5 py-10 flex flex-col justify-center relative  ml-[153px]">
           <div
             className="w-full  bg-cover bg-center rounded-xl lg:p-24 p-14 mb-10"
             style={{ backgroundImage: `url(${kemendagri})` }}
@@ -261,11 +264,14 @@ export default function Home() {
       {/* pengumuman */}
       <section
         id="pengumuman"
-        className="h-full py-10 flex flex-col  bg-cover bg-no-repeat bg-center"
+        className="h-full py-10 flex flex-col  bg-cover bg-no-repeat bg-center "
         style={{ backgroundImage: `url(${pengumuman})` }}
       >
-        <div className="flex flex-col gap-y-10 h-screen">
-          <Title text="Pengumuman" />
+        <div className="flex flex-col gap-y-10 h-screen ml-[153px]">
+          <Title
+            text="Pengumuman"
+            desc="Lihat perkembangan bimbingan hukum anda di sini"
+          />
           <div className="flex items-center justify-center lg:p-12 p-6 h-full">
             <div className="w-full">
               <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
@@ -289,13 +295,20 @@ export default function Home() {
       {/* konsultasi */}
 
       {/* pengacara */}
-      <section id="pengacara" className="text-gray-600 body-font h-full py-10">
-        <div className="flex flex-col items-center  h-screen">
-          <Title text="Mitra Pengacara Pilihan" />
+      <section
+        id="pengacara"
+        className="h-full py-10 flex flex-col  bg-cover bg-no-repeat bg-center "
+        style={{ backgroundImage: `url(${pengumuman})` }}
+      >
+        <div className="flex flex-col items-center ml-[153px] h-screen">
+          <Title
+            text="Mitra Pengacara Pilihan"
+            desc="Mitra kami telah tergabung dan diawasi oleh organisasi advokat (PERADI, KAI, dsb.)"
+          />
           {/* content */}
           <div className="flex justify-center items-center h-full w-full">
             {/* card content */}
-           <AdvokatGrid advokat={advokat} />
+            <AdvokatGrid advokat={advokat} />
             {/* card content */}
           </div>
           {/* content */}
