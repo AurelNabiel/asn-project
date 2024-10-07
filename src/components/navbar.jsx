@@ -30,13 +30,13 @@ export default function Navbar({ open, setOpen }) {
         </div>
         <div className="mt-[38px] mb-7 h-px ">
           <ul className="mb pt-1">
-            <div onClick={() => {
+            <button onClick={() => {
               setOpen(!open)
               console.log(open);
               
             }} className={`relative mb-3 flex px-8 cursor-pointer ${open ?? ""}`}>
               <HambergerMenu color="#D19D1C" size={30} />
-            </div>
+            </button>
             <MenuLink open={open} />
           </ul>
         </div>

@@ -16,6 +16,9 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeState } from "../../redux/actions";
 import Title from "./components/Title";
+import { SearchNormal, SearchNormal1 } from "iconsax-react";
+import DropdownFilter from "../../components/Dropdown";
+import AdvokatGrid from "./components/AdvoGrid";
 
 export default function Home() {
   const activeHash = useSelector((state) => state.data);
@@ -57,7 +60,93 @@ export default function Home() {
       img: "",
       university: "Universitas Surabaya",
     },
+    {
+      id: 5,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 6,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 7,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 8,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    },
+    {
+      id: 9,
+      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      rating: 4,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
+      img: "",
+      university: "Universitas Surabaya",
+    }
   ];
+
+  const dataPengumuman = [
+    {
+      id: 1,
+      title: "Pengumuman 1",
+      status: "Diterima",
+      date: "2021-12-12",
+      doneAt: "2021-12-12",
+    },
+    {
+      id: 2,
+      title: "Pengumuman 2",
+      status: "Diproses",
+      date: "2021-12-13",
+      doneAt: "2021-12-13",
+    },
+    {
+      id: 3,
+      title: "Pengumuman 3",
+      status: "Diterima",
+      date: "2021-12-14",
+      doneAt: "2021-12-14",
+    },
+    {
+      id: 4,
+      title: "Pengumuman 4",
+      status: "Diproses",
+      date: "2021-12-15",
+      doneAt: "2021-12-15",
+    },
+    {
+      id: 5,
+      title: "Pengumuman 5",
+      status: "Diterima",
+      date: "2021-12-16",
+      doneAt: "2021-12-16",
+    },
+    {
+      id: 6,
+      title: "Pengumuman 6",
+      status: "Diproses",
+      date: "2021-12-17",
+      doneAt: "2021-12-17",
+    },
+  ];
+
   const location = useLocation();
 
   React.useEffect(() => {
@@ -112,6 +201,10 @@ export default function Home() {
     };
   }, [location]);
 
+  const options1 = [{ name: "Pengalaman Kerja", value: "" }];
+  const options2 = [{ name: "Daerah", value: "" }, { name: "Cibitung", value: "cibitung" }];
+  const [selectedOption1, setSelectedOption1] = React.useState(options1[0]);
+  const [selectedOption2, setSelectedOption2] = React.useState(options2[0]);
   return (
     <>
       <section id="">
@@ -176,44 +269,15 @@ export default function Home() {
           <div className="flex items-center justify-center lg:p-12 p-6 h-full">
             <div className="w-full">
               <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {dataPengumuman.map((i, key) => (
+                  <Card key={key} i={i} />
+                ))}
               </div>
 
               <div class="flex justify-center mt-6">
                 <button class="bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200">
                   Lihat Lebih Lanjut
                 </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className=" flex flex-col gap-y-10 h-screen justify-center">
-          <Title text="Proses Pengaduan Hukum" />
-          <div className="flex-1  p-8">
-            <div className="bg-white rounded-lg shadow-lg px-8 py-52 flex justify-center items-center">
-              <div className="flex items-center ">
-                <div className="flex items-center">
-                  <div className="w-28 h-28 bg-blue-600 rounded-full"></div>
-                  <div className="w-16 h-1 bg-yellow-500"></div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-28 h-28 bg-blue-600 rounded-full"></div>
-                  <div className="w-16 h-1 bg-yellow-500"></div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-28 h-28 bg-blue-600 rounded-full"></div>
-                  <div className="w-16 h-1 bg-yellow-500"></div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center">
-                    <i className="fas fa-check text-white"></i>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -225,82 +289,16 @@ export default function Home() {
       {/* konsultasi */}
 
       {/* pengacara */}
-      <section id="pengacara" class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto  h-screen">
-          <div className="title flex flex-col gap-y-3 mb-5">
-            <h2 className="text-center font-bold text-2xl text-black ">
-              60+ Mitra Pengacara Pilihan
-            </h2>
-            <p className="text-center font-medium">
-              Mitra kami telah tergabung dan diawasi oleh organisasi advokat
-              (PERADI, KAI, dsb.)
-            </p>
+      <section id="pengacara" className="text-gray-600 body-font h-full py-10">
+        <div className="flex flex-col items-center  h-screen">
+          <Title text="Mitra Pengacara Pilihan" />
+          {/* content */}
+          <div className="flex justify-center items-center h-full w-full">
+            {/* card content */}
+           <AdvokatGrid advokat={advokat} />
+            {/* card content */}
           </div>
           {/* content */}
-          <div className="relative mb-5">
-            {/* Custom Navigation */}
-            <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
-              <button className="swiper-button-prev bg-gray-900 text-white p-2 rounded-full">
-                <FaArrowLeft />
-              </button>
-            </div>
-            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
-              <button className="swiper-button-next bg-gray-900 text-white p-2 rounded-full">
-                <FaArrowRight />
-              </button>
-            </div>
-            {/* Custom Navigation */}
-
-            {/* Swiper */}
-            <Swiper
-              slidesPerView={3}
-              spaceBetween={30}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                },
-              }}
-              style={{
-                padding: "20px 0",
-              }}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-              modules={[Navigation]}
-              className="mySwiper"
-            >
-              {advokat.map((i, key) => (
-                <SwiperSlide key={key}>
-                  <AdvoCard i={i} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          {/* content */}
-          <div className="flex justify-center mt-5">
-            <button
-              className={` px-6 py-3 text-white rounded-lg transition duration-200 ease-in-out  `}
-              style={{ backgroundColor: "#2C91FF" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "#2677CC")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "#2C91FF")
-              }
-            >
-              Lihat Semua Mitra Pengacara
-            </button>
-          </div>
         </div>
       </section>
       {/* pengacara */}

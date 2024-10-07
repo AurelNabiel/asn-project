@@ -5,7 +5,7 @@ import { MdOutlineWork } from 'react-icons/md';
 export default function AdvoCard({i}) {
   return (
     <>
-    <div className="p-5 advocard rounded-lg flex flex-col items-start">
+    <div className="p-5 advocard bg-white rounded-lg flex flex-col items-start">
       {/* top */}
       <div className="relative flex items-center justify-between gap-x-3 w-full mb-4">
         {/* left image */}

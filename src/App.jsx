@@ -13,6 +13,8 @@ import Konsultasi from "./pages/konsultasi";
 import Asn from "./pages/auth/asn";
 import Pengacara from "./pages/auth/pengacara";
 import Layout from "./components/Layout";
+import DetailPengumuman from "./pages/home/details/pengumuman";
+import DetailPengacara from "./pages/home/details/pengacara";
 
 function App() {
   const location = useLocation();
@@ -22,6 +24,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout children={<Home />} />} />
+        <Route path="/pengumuman/:id" element={<Layout children={<DetailPengumuman />} />} />
+        <Route path="/pengacara/:id" element={<Layout children={<DetailPengacara />} />} />
 
         <Route path="/auth/asn" element={<Asn />} />
         <Route path="/auth/pengacara" element={<Pengacara />} />

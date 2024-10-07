@@ -1,22 +1,37 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Card() {
+
+export default function Card({ i }) {
+  const navigate = useNavigate();
   return (
     <>
-      <div class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4 ">
-        <div class="bg-blue-500 text-white p-6 rounded-lg flex text-center">
+      <div
+        onClick={() => {
+          navigate(`/pengumuman/${i.id}`);
+        }}
+        className="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4"
+      >
+        <div className="bg-blue-500 text-white p-6 rounded-lg flex text-center">
           <div>
-            <p class="text-xl font-bold">21</p>
-            <p class="text-sm">Juli</p>
+            <p className="text-xl font-bold">{new Date(i.date).getDate()}</p>
+
+            <p className="text-sm">
+              {new Date(i.date).toLocaleString("id-ID", { month: "long" })}
+            </p>
           </div>
         </div>
         <div>
-          <h3 class="font-bold text-lg">Pengaduan sedang di proses</h3>
-          <p class="text-sm">sedang di proses :</p>
-          <p class="text-sm">
+          <h3 className="font-bold text-lg">{i.title}</h3>
+          <p className="text-sm">Status: {i.status}</p>
+          <p className="text-sm">
             Estimasi selesai{" "}
-            <a href="#" class="text-blue-500">
-              24 Juli 2024
+            <a href="#" className="text-blue-500">
+              {new Date(i.doneAt).toLocaleDateString("id-ID", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
             </a>
           </p>
         </div>

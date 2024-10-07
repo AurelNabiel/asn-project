@@ -7,7 +7,7 @@ import {
   Sms,
 } from "iconsax-react";
 import React, { act } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { changeState, setActiveHash } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -61,14 +61,13 @@ export default function MenuLink({ open }) {
 }
 
 const MenuList = ({ iconSelected, icon, name, hash, open }) => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isActive, setIsActive] = React.useState(false);
-  const location = useLocation();
+
   const state = useSelector((state) => state.data);
   const [isHovered, setIsHovered] = React.useState(false);
   React.useEffect(() => {
     // Update active hash saat location berubah
-    console.log(state);
 
     if (state.activeHash === hash) {
       setIsActive(true);
@@ -83,18 +82,20 @@ const MenuList = ({ iconSelected, icon, name, hash, open }) => {
     <li className="relative mb-3 flex hover:cursor-pointer px-8">
       <a
         href={hash}
+        onClick={() => {
+          navigate(`/${hash}`);
+        }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`my-[3px]  duration-150 transform  flex cursor-pointer items-center  pl-1 py-2 rounded-lg hover:bg-[#D19D1C] hover:text-white dark:hover:bg-[#D19D1C] dark:hover:text-white ${
+        className={`my-[3px]  transform  flex cursor-pointer items-center  pl-1 py-2 rounded-lg hover:bg-[#D19D1C] hover:text-white dark:hover:bg-[#D19D1C] dark:hover:text-white ${
           isActive &&
           "bg-[#D19D1C] text-white dark:bg-[#D19D1C] dark:text-white"
-        } ${open ? "min-w-[200px]" : "w-full"}`}
+        } ${open ? "min-w-[200px] delay-0  duration-150" : "w-full"}`}
       >
         <span
           className={`font-bold !z-50 ${
             isActive || isHovered ? "text-blue-500" : "text-brand-500"
           } dark:text-white`}
-         
         >
           {/* Menampilkan ikon berdasarkan kondisi */}
           {isActive || isHovered ? iconSelected : icon}

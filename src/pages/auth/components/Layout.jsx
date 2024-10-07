@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       style={{ backgroundImage: `url(${kemendagri})` }}
     >
       <div className="relative z-10 w-full h-full flex justify-center items-center">
-        <div className="w-full max-w-4xl  bg-white shadow-lg rounded-2xl flex justify-between">
+        <div  className="w-full max-w-4xl  bg-white shadow-lg rounded-2xl flex justify-between">
           <div className="left text-start mb-6 p-6 flex flex-col lg:w-2/3 w-full gap-y-5">
             {/* content */}
             {children}
