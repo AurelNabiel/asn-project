@@ -201,13 +201,7 @@ export default function Home() {
     };
   }, [location]);
 
-  const options1 = [{ name: "Pengalaman Kerja", value: "" }];
-  const options2 = [
-    { name: "Daerah", value: "" },
-    { name: "Cibitung", value: "cibitung" },
-  ];
-  const [selectedOption1, setSelectedOption1] = React.useState(options1[0]);
-  const [selectedOption2, setSelectedOption2] = React.useState(options2[0]);
+
   return (
     <>
       <section id="">
