@@ -27,7 +27,7 @@ export default function Home() {
   const advokat = [
     {
       id: 1,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
@@ -35,7 +35,7 @@ export default function Home() {
     },
     {
       id: 2,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
 
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
@@ -44,7 +44,7 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
 
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
@@ -53,7 +53,7 @@ export default function Home() {
     },
     {
       id: 4,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
 
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
@@ -62,7 +62,7 @@ export default function Home() {
     },
     {
       id: 5,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
@@ -70,7 +70,7 @@ export default function Home() {
     },
     {
       id: 6,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
@@ -78,7 +78,7 @@ export default function Home() {
     },
     {
       id: 7,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
@@ -86,7 +86,7 @@ export default function Home() {
     },
     {
       id: 8,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
@@ -94,7 +94,7 @@ export default function Home() {
     },
     {
       id: 9,
-      name: "Taufan Adi Wijaya, S.H., M.H., C.L.A",
+      name: "Putri Tasya Fabyolla, S.H., M.H.",
       rating: 4,
       desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio vitae molestias culpa sint impedit soluta ipsum, quae totam corporis! Ex, in voluptate. Quam id natus corporis dolorem libero in.",
       img: "",
@@ -205,7 +205,7 @@ export default function Home() {
   return (
     <>
       <section id="">
-        <div className="overflow-hidden h-screen mt-10 ml-[153px]">
+        <div className="overflow-hidden h-screen mt-10 lg:ml-[153px] ml-[103px]">
           <div
             className=" py-20 bg-cover bg-center text-white xl:px-20 lg:px-20 md:px-16 sm:px-14 px-12 capitalize rounded-2xl"
             style={{ backgroundImage: `url(${kemendagri})` }}
@@ -238,7 +238,7 @@ export default function Home() {
           </div>
         </div>
         {/* faq */}
-        <div className="px-5 py-10 flex flex-col justify-center relative  ml-[153px]">
+        <div className="px-5 py-10 flex flex-col justify-center relative  lg:ml-[153px] ml-[103px]">
           <div
             className="w-full  bg-cover bg-center rounded-xl lg:p-24 p-14 mb-10"
             style={{ backgroundImage: `url(${kemendagri})` }}
@@ -261,7 +261,7 @@ export default function Home() {
         className="h-full py-10 flex flex-col  bg-cover bg-no-repeat bg-center "
         style={{ backgroundImage: `url(${pengumuman})` }}
       >
-        <div className="flex flex-col gap-y-10 h-screen ml-[153px]">
+        <div className="flex flex-col gap-y-10 h-screen lg:ml-[153px] ml-[103px]">
           <Title
             text="Pengumuman"
             desc="Lihat perkembangan bimbingan hukum anda di sini"
@@ -291,10 +291,10 @@ export default function Home() {
       {/* pengacara */}
       <section
         id="pengacara"
-        className="h-full py-10 flex flex-col  bg-cover bg-no-repeat bg-center "
+        className="h-full py-10 lg:px-0 px-5 flex flex-col  bg-cover bg-no-repeat bg-center "
         style={{ backgroundImage: `url(${pengumuman})` }}
       >
-        <div className="flex flex-col items-center ml-[153px] h-screen">
+        <div className="flex flex-col items-center lg:ml-[153px] ml-[103px] h-screen">
           <Title
             text="Mitra Pengacara Pilihan"
             desc="Mitra kami telah tergabung dan diawasi oleh organisasi advokat (PERADI, KAI, dsb.)"
