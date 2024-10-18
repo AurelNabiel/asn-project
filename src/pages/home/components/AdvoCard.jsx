@@ -12,7 +12,7 @@ export default function AdvoCard({i}) {
       navigate(`/pengacara/${i.id}`);
     }}>
       {/* top */}
-      <div className="relative flex items-center justify-between gap-x-3 w-full mb-4">
+      <div className="relative flex lg:flex-row flex-col  lg:items-center items-start lg:gap-y-0 gap-y-3 justify-between gap-x-3 w-full mb-4">
         {/* left image */}
         <img
           className="w-20 h-20 align-top inline-block rounded-[6px] "
